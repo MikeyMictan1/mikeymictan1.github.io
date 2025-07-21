@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Dev Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="static/css/output.css" rel="stylesheet">
+    <link href="static/css/other.css" rel="stylesheet">
+</head>
+<body class="relative min-h-screen flex flex-col items-center justify-center" style="background-color: #000;">
+    <!-- Fixed Background GIF -->
+    <div class="fixed inset-0 -z-20 bg-cover bg-center gif-fade-in" style="background-image: url('static/gifs/showreel.gif');"></div>
+    <!-- Dark Overlay -->
+    <div class="fixed inset-0 bg-black bg-opacity-60 -z-10 pointer-events-none"></div>
+    <!-- Top Navbar -->
+    <nav class="w-full fixed top-0 left-0 z-50 bg-white/10 shadow-lg backdrop-blur-md">
+        <div class="max-w-5xl mx-auto flex items-center justify-between py-4 px-6">
+            <!-- Hamburger (mobile) -->
+            <button id="menu-btn" class="md:hidden flex items-center text-white focus:outline-none" aria-label="Open Menu">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <!-- Left: Navigation Links (hidden on mobile) -->
+            <div id="nav-links" class="hidden md:flex items-center gap-6">
+                <a href="#projects" class="text-white text-lg font-medium hover:text-red-400 transition">Projects</a>
+                <a href="#about" class="text-white text-lg font-medium hover:text-red-400 transition">About</a>
+                <a href="#resume" class="text-white text-lg font-medium hover:text-red-400 transition">Resume</a>
+            </div>
+            <!-- Center: Name -->
+            <div class="text-2xl md:text-3xl font-extrabold text-white tracking-wide text-center flex-1 md:static absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0">Michael Tan-Sikorski</div>
+            <!-- Right: Social Icons (hidden on mobile) -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" class="hover:scale-110 transition">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white hover:text-blue-400"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg>
+                </a>
+                <a href="https://github.com/" target="_blank" aria-label="GitHub" class="hover:scale-110 transition">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white hover:text-gray-400"><path d="M12 0c-6.627 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.371.823 1.102.823 2.222v3.293c0 .322.218.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="mailto:your@email.com" aria-label="Email" class="hover:scale-110 transition">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white hover:text-red-400"><path d="M12 13.065l-11.99-7.065v14h24v-14l-12.01 7.065zm11.99-9.065h-23.98l11.99 7.065 11.99-7.065z"/></svg>
+                </a>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden flex-col items-center bg-white/20 backdrop-blur-md px-6 pb-4 pt-2">
+            <a href="#projects" class="block w-full text-white text-lg font-medium py-2 hover:text-red-400 transition">Projects</a>
+            <a href="#about" class="block w-full text-white text-lg font-medium py-2 hover:text-red-400 transition">About</a>
+            <a href="#resume" class="block w-full text-white text-lg font-medium py-2 hover:text-red-400 transition">Resume</a>
+            <div class="flex items-center gap-4 mt-2">
+                <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" class="hover:scale-110 transition">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white hover:text-blue-400"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg>
+                </a>
+                <a href="https://github.com/" target="_blank" aria-label="GitHub" class="hover:scale-110 transition">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white hover:text-gray-400"><path d="M12 0c-6.627 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.371.823 1.102.823 2.222v3.293c0 .322.218.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="mailto:your@email.com" aria-label="Email" class="hover:scale-110 transition">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white hover:text-red-400"><path d="M12 13.065l-11.99-7.065v14h24v-14l-12.01 7.065zm11.99-9.065h-23.98l11.99 7.065 11.99-7.065z"/></svg>
+                </a>
+            </div>
+        </div>
+        <script src="static/js/portfoliojs.js"></script>
+    </nav>
+    <!-- Main Content -->
+    <div class="h-20"></div> <!-- Spacer for fixed navbar -->
+    <section class="relative w-full min-h-screen flex flex-col items-center justify-between">
+      <header class="w-full flex flex-col items-center justify-center text-center" style="position:absolute;top:35vh;left:0;right:0;transform:translateY(-35%);">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg mb-4 pixel-font fade-in">Hello, I'm Michael!</h1>
+        <p class="text-xl md:text-2xl font-extrabold max-w-xl mx-auto text-white pixel-font fade-in" style="animation-delay: 0.15s;">Game Developer - Gameplay Programmer.</p>
+      </header>
+      <!-- Scroll Down Indicator -->
+      <div class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center z-20" style="bottom:16vh;">
+        <div class="scroll-indicator mb-5">
+          <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto">
+            <polyline points="8,8 24,24 40,8" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <polyline points="8,20 24,36 40,20" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+      </div>
+      <h2 class="absolute left-1/2 -translate-x-1/2 text-2xl md:text-3xl font-extrabold text-white pixel-font mb-0 z-10" style="bottom:13vh;">My Projects</h2>
+    </section>
+    <!-- Projects Section - VisionON style split -->
+
+    <section class="w-full min-h-[420px] flex flex-col md:flex-row items-stretch justify-center bg-gradient-to-r from-[#2a2a2a] via-[#3a2a3a] to-[#2a2a3a] relative overflow-hidden">
+      <!-- Left: Image -->
+      <div class="md:w-1/2 w-full flex items-center justify-center bg-black/60">
+        <img src="https://placehold.co/800x420/222/fff?text=Project+Image" alt="Project Placeholder" class="object-cover w-full h-full max-h-[420px] md:max-h-none" style="min-height:260px;">
+      </div>
+      <!-- Right: Content -->
+      <div class="md:w-1/2 w-full flex flex-col justify-center px-6 py-10 md:py-0 md:px-16 text-white" style="font-family: 'Press Start 2P', monospace;">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-8 tracking-widest text-left" style="letter-spacing:0.08em;">AMAZ'D</h2>
+        <p class="text-base md:text-lg mb-8 font-normal">Placeholder.</p>
+        <p class="text-base md:text-lg mb-8 font-normal">Available on <a href="#" class="underline">Steam</a> </p>
+        <a href="#" class="underline mb-8 inline-block text-base md:text-lg">Watch the trailer!</a>
+        <div class="flex items-center gap-4 text-base md:text-lg">
+          <span>Stay up to date:</span>
+          <span>🎮</span>
+          <span>🐦</span>
+          <span>📺</span>
+          <span>📧</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full min-h-[420px] flex flex-col md:flex-row items-stretch justify-center relative overflow-hidden">
+      <!-- Blurred Background Image -->
+      <div class="absolute inset-0 w-full h-full z-0">
+        <img src="static/images/safetypoolbg.png" alt="Safety Pool Studio Background" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+
+      <!-- Left: Content -->
+      <div class="md:w-1/2 w-full flex flex-col justify-center px-6 py-10 md:py-0 md:px-16 text-white order-2 md:order-1 relative z-10" style="font-family: 'Press Start 2P', monospace;">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-8 tracking-widest text-left" style="letter-spacing:0.08em;">SAFETY POOL STUDIO</h2>
+        <p class="text-base md:text-lg mb-8 font-normal">Placeholder</p>
+        <p class="text-base md:text-lg mb-8 font-normal">Available on: <a href="#" class="underline">website</a></p>
+        <a href="#" class="underline mb-8 inline-block text-base md:text-lg">safetypoolstudio.ai</a>
+        <div class="flex items-center gap-4 text-base md:text-lg">
+          <span>Stay up to date:</span>
+          <span>🎮</span>
+          <span>🐦</span>
+          <span>📺</span>
+          <span>📧</span>
+        </div>
+      </div>
+      <!-- Right: Image -->
+      <div class="md:w-1/2 w-full flex items-center justify-center bg-black/60 order-1 md:order-2 relative z-10">
+        <img src="static/images/safetypool.png" alt="Safety Pool Studio" class="object-cover w-full h-full max-h-[420px] md:max-h-none" style="min-height:260px;">
+      </div>
+    </section>
+
+    <!-- Placeholder Project Section -->
+    <section class="w-full min-h-[420px] flex flex-col md:flex-row items-stretch justify-center bg-gradient-to-r from-[#232a3a] via-[#2a2a3a] to-[#232a3a] relative overflow-hidden">
+      <!-- Left: Image -->
+      <div class="md:w-1/2 w-full flex items-center justify-center bg-black/60">
+        <img src="https://placehold.co/800x420/222/fff?text=Project+Image" alt="Project Placeholder" class="object-cover w-full h-full max-h-[420px] md:max-h-none" style="min-height:260px;">
+      </div>
+      <!-- Right: Content -->
+      <div class="md:w-1/2 w-full flex flex-col justify-center px-6 py-10 md:py-0 md:px-16 text-white" style="font-family: 'Press Start 2P', monospace;">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-8 tracking-widest text-left" style="letter-spacing:0.08em;">PET PAYDAY</h2>
+        <p class="text-base md:text-lg mb-8 font-normal">Warwick Hackathon 2024 winning game - Gamified Pet Care Simulator.</p>
+        <p class="text-base md:text-lg mb-8 font-normal">Devpost: <a href="https://devpost.com/software/giddy-up-glitch" class="underline">Hackathon Winning Post Here</a></p>
+        <a href="#" class="underline mb-8 inline-block text-base md:text-lg">Learn more</a>
+        <div class="flex items-center gap-4 text-base md:text-lg">
+          <span>Stay up to date:</span>
+          <span>🎮</span>
+          <span>�</span>
+          <span>📺</span>
+          <span>📧</span>
+        </div>
+      </div>
+    </section>
+
+
+</body>
+<style>
+  body, html, .font-montserrat, .font-custom, .font-custom2, .pixel-font {
+    font-family: 'Press Start 2P', 'Montserrat', monospace !important;
+    letter-spacing: 1px;
+  }
+  section {
+    box-sizing: border-box;
+  }
+  @media (max-width: 768px) {
+    section {
+      flex-direction: column !important;
+    }
+    section > div {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    section img {
+      max-height: 220px !important;
+    }
+  }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s cubic-bezier(.4,2,.6,1) forwards;
+  }
+  .fade-in[style*="animation-delay"] {
+    animation-delay: 0.15s;
+  }
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .gif-fade-in {
+    opacity: 0;
+    animation: gifFadeIn 1.2s cubic-bezier(.4,2,.6,1) forwards;
+  }
+  @keyframes gifFadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  .scroll-indicator svg {
+    animation: scrollBounce 1.4s infinite cubic-bezier(.4,0,.2,1);
+    opacity: 0.85;
+  }
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); opacity: 0.85; }
+    30% { transform: translateY(10px); opacity: 1; }
+    60% { transform: translateY(0); opacity: 0.85; }
+  }
+  body {
+    background-color: #000 !important;
+  }
+</style>
+</body>
+</html>
