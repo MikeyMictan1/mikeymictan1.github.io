@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Michael Tan-Sikorski</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="static/css/output.css" rel="stylesheet">
+    <link href="static/css/other.css" rel="stylesheet">
+</head>
+<body class="relative min-h-screen flex flex-col items-center justify-center" style="background-color: #000;">
+    <!-- Top Navbar -->
+    <nav class="w-full fixed top-0 left-0 z-50 bg-white/10 shadow-lg backdrop-blur-md">
+        <div class="max-w-5xl mx-auto flex items-center justify-between py-4 px-6">
+            <!-- Hamburger (mobile) -->
+            <button id="menu-btn" class="md:hidden flex items-center text-white focus:outline-none" aria-label="Open Menu">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <!-- Left: Navigation Links (hidden on mobile) -->
+            <div id="nav-links" class="hidden md:flex items-center gap-6">
+                <a href="index.html#projects" class="text-white text-lg font-medium hover:text-red-400 transition">Projects</a>
+                <a href="index.html#aboutme" class="text-white text-lg font-medium hover:text-red-400 transition">About</a>
+                <a href="resume.html" class="text-white text-lg font-medium hover:text-red-400 transition">Resume</a>
+            </div>
+            <!-- Center: Name -->
+            <div class="text-2xl md:text-3xl font-extrabold text-white tracking-wide text-center flex-1 md:static absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0">
+                <a href="index.html#top" class="text-white hover:text-red-400 transition" style="text-decoration:none;">Michael Tan-Sikorski</a>
+            </div>
+            <!-- Right: Social Icons (hidden on mobile) -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://www.linkedin.com/in/michael-tan-sikorski/" target="_blank" aria-label="LinkedIn" class="hover:scale-110 transition">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white hover:text-blue-400"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg>
+                </a>
+                <a href="https://github.com/MikeyMictan1" target="_blank" aria-label="GitHub" class="hover:scale-110 transition">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white hover:text-gray-400"><path d="M12 0c-6.627 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.371.823 1.102.823 2.222v3.293c0 .322.218.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="mailto:michaeltansikorski@outlook.com" aria-label="Email" class="hover:scale-110 transition">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white hover:text-red-400"><path d="M12 13.065l-11.99-7.065v14h24v-14l-12.01 7.065zm11.99-9.065h-23.98l11.99 7.065 11.99-7.065z"/></svg>
+                </a>
+            </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden flex-col items-center bg-white/20 backdrop-blur-md px-6 pb-4 pt-2">
+            <a href="index.html#projects" class="block w-full text-white text-lg font-medium py-2 hover:text-red-400 transition">Projects</a>
+            <a href="index.html#aboutme" class="block w-full text-white text-lg font-medium py-2 hover:text-red-400 transition">About</a>
+            <a href="resume.html" class="block w-full text-white text-lg font-medium py-2 hover:text-red-400 transition">Resume</a>
+            <div class="flex items-center gap-4 mt-2">
+                <a href="https://www.linkedin.com/in/michael-tan-sikorski/" target="_blank" aria-label="LinkedIn" class="hover:scale-110 transition">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white hover:text-blue-400"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg>
+                </a>
+                <a href="https://github.com/MikeyMictan1" target="_blank" aria-label="GitHub" class="hover:scale-110 transition">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white hover:text-gray-400"><path d="M12 0c-6.627 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.371.823 1.102.823 2.222v3.293c0 .322.218.694.825.576 4.765-1.589 8.199-6.085 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="mailto:michaeltansikorski@outlook.com" aria-label="Email" class="hover:scale-110 transition">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 text-white hover:text-red-400"><path d="M12 13.065l-11.99-7.065v14h24v-14l-12.01 7.065zm11.99-9.065h-23.98l11.99 7.065 11.99-7.065z"/></svg>
+                </a>
+            </div>
+        </div>
+        <script src="static/js/portfoliojs.js"></script>
+    </nav>
+    <!-- Main Content Here -->
+    <div class="h-20"></div> <!-- Spacer for fixed navbar -->
+    <section class="w-full min-h-screen flex flex-col items-center justify-start text-white px-4 py-12" style="font-family: 'Montserrat', 'Press Start 2P', monospace; max-width:900px; margin:auto;">
+      <div class="w-full flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 md:mb-0">Michael Tan-Sikorski</h1>
+        <a href="static/files/Michael_Tan_Sikorski_CV__Version_158_.pdf" download class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition shadow inline-block text-center">Download CV (PDF)</a>
+      </div>
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold mb-2">Game Developer & Gameplay Programmer</h2>
+        <p class="text-lg text-gray-200">Experienced in Unity, Unreal Engine, C#, C++, and Python. Passionate about creating engaging gameplay and interactive experiences. Hackathon winner and studio founder.</p>
+      </div>
+      <div class="mb-8">
+        <h3 class="text-xl font-bold mb-2 text-red-400">Skills</h3>
+        <ul class="list-disc list-inside text-lg text-gray-100 grid grid-cols-1 md:grid-cols-2 gap-x-8">
+          <li>Unity (C#)</li>
+          <li>Unreal Engine (C++)</li>
+          <li>Gameplay Programming</li>
+          <li>Game Design</li>
+          <li>Python</li>
+          <li>AI & Machine Learning</li>
+          <li>Team Leadership</li>
+          <li>Hackathons</li>
+        </ul>
+      </div>
+      <div class="mb-8">
+        <h3 class="text-xl font-bold mb-2 text-red-400">Experience</h3>
+        <div class="mb-4">
+          <div class="font-bold text-lg">Safety Pool Studio <span class="text-gray-400">— Founder & Lead Developer</span></div>
+          <div class="text-gray-300">2023 - Present</div>
+          <ul class="list-disc list-inside text-gray-100">
+            <li>Founded indie studio focused on innovative game projects and AI-driven experiences.</li>
+            <li>Led development of <span class="font-bold">Safety Pool Studio</span> website and game prototypes.</li>
+          </ul>
+        </div>
+        <div class="mb-4">
+          <div class="font-bold text-lg">Warwick Hackathon 2024 <span class="text-gray-400">— Winner</span></div>
+          <div class="text-gray-300">2024</div>
+          <ul class="list-disc list-inside text-gray-100">
+            <li>Developed <span class="font-bold">Pet Payday</span>, a gamified pet care simulator, winning first place.</li>
+            <li>Integrated gameplay mechanics and team collaboration under time constraints.</li>
+          </ul>
+        </div>
+        <div class="mb-4">
+          <div class="font-bold text-lg">Freelance Game Developer</div>
+          <div class="text-gray-300">2022 - Present</div>
+          <ul class="list-disc list-inside text-gray-100">
+            <li>Worked on multiple indie game projects using Unity and Unreal Engine.</li>
+            <li>Specialized in gameplay programming, prototyping, and rapid iteration.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mb-8">
+        <h3 class="text-xl font-bold mb-2 text-red-400">Education</h3>
+        <div class="mb-2">
+          <div class="font-bold text-lg">University of Warwick</div>
+          <div class="text-gray-300">BSc Computer Science, 2021 - 2024</div>
+        </div>
+      </div>
+      <div class="mb-8">
+        <h3 class="text-xl font-bold mb-2 text-red-400">Projects</h3>
+        <ul class="list-disc list-inside text-gray-100">
+          <li><span class="font-bold">AMAZ'D</span> — Puzzle game available on Steam (see portfolio).</li>
+          <li><span class="font-bold">Pet Payday</span> — Hackathon-winning pet care simulator.</li>
+          <li><span class="font-bold">Safety Pool Studio</span> — AI-driven game studio and web platform.</li>
+        </ul>
+      </div>
+      <div class="mb-8">
+        <h3 class="text-xl font-bold mb-2 text-red-400">Contact</h3>
+        <ul class="list-none text-gray-100">
+          <li>Email: <a href="mailto:michaeltansikorski@outlook.com" class="underline">michaeltansikorski@outlook.com</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/michael-tan-sikorski/" class="underline" target="_blank">linkedin.com/in/michael-tan-sikorski</a></li>
+          <li>GitHub: <a href="https://github.com/MikeyMictan1" class="underline" target="_blank">github.com/MikeyMictan1</a></li>
+        </ul>
+      </div>
+      <div class="w-full flex justify-center mt-8">
+        <a href="static/files/Michael_Tan_Sikorski_CV__Version_158_.pdf" download class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded transition shadow inline-block text-center">Download Full CV (PDF)</a>
+      </div>
+    </section>
+</body>
+<style>
+  body, html, .font-montserrat, .font-custom, .font-custom2, .pixel-font {
+    font-family: 'Press Start 2P', 'Montserrat', monospace !important;
+    letter-spacing: 1px;
+  }
+  section {
+    box-sizing: border-box;
+  }
+  @media (max-width: 768px) {
+    section {
+      flex-direction: column !important;
+    }
+    section > div {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    section img {
+      max-height: 220px !important;
+    }
+  }
+</style>
+</html>
