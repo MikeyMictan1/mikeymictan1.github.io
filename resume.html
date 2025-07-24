@@ -62,7 +62,7 @@
     </nav>
     <!-- Main Content Here -->
     <div class="h-20"></div> <!-- Spacer for fixed navbar -->
-    <section class="w-full min-h-[100vh] flex flex-col items-center justify-start text-white px-4 py-16" style="font-family: 'Montserrat', 'Press Start 2P', monospace;">
+    <section class="w-full min-h-[100vh] flex flex-col items-center justify-start text-white px-4 py-16 fade-on-scroll" style="font-family: 'Montserrat', 'Press Start 2P', monospace;">
       <h1 class="text-4xl md:text-5xl font-extrabold mb-8 text-blue-400">Michael Tan-Sikorski — CV</h1>
       <div class="mb-12 flex justify-center w-full">
         <div class="cv-download-box flex flex-col items-center justify-center p-6 rounded-xl shadow-lg">
@@ -71,7 +71,7 @@
       </div>
     </section>
 
-    <section class="w-full flex flex-col items-center justify-start text-white px-4 py-16">
+    <section class="w-full flex flex-col items-center justify-start text-white px-4 py-16 fade-on-scroll">
       <div class="w-full max-w-3xl mx-auto">
         <h2 class="text-2xl font-bold mb-6 text-blue-400">Contact</h2>
         <p class="text-lg mb-2">07468411989 | <a href="mailto:michaeltansikorski@outlook.com" class="underline">michaeltansikorski@outlook.com</a></p>
@@ -79,7 +79,7 @@
       </div>
     </section>
 
-    <section class="w-full flex flex-col items-center justify-start text-white px-4 py-16">
+    <section class="w-full flex flex-col items-center justify-start text-white px-4 py-16 fade-on-scroll">
       <div class="w-full max-w-3xl mx-auto">
         <h2 class="text-2xl font-bold mb-6 text-blue-400">Technical Skills</h2>
         <ul class="list-disc list-inside text-gray-100 grid grid-cols-1 md:grid-cols-2 gap-x-8">
@@ -90,7 +90,7 @@
       </div>
     </section>
 
-    <section class="w-full flex flex-col items-center justify-start text-white px-4 py-16">
+    <section class="w-full flex flex-col items-center justify-start text-white px-4 py-16 fade-on-scroll">
       <div class="w-full max-w-3xl mx-auto">
         <h2 class="text-2xl font-bold mb-6 text-blue-400">Education</h2>
         <div class="mb-4">
@@ -109,7 +109,7 @@
       </div>
     </section>
 
-    <section class="w-full flex flex-col items-center justify-start text-white px-4 py-16">
+    <section class="w-full flex flex-col items-center justify-start text-white px-4 py-16 fade-on-scroll">
       <div class="w-full max-w-3xl mx-auto">
         <h2 class="text-2xl font-bold mb-6 text-blue-400">Experience</h2>
         <div class="mb-6">
@@ -155,7 +155,7 @@
       </div>
     </section>
 
-    <section class="w-full flex flex-col items-center justify-start text-white px-4 py-16">
+    <section class="w-full flex flex-col items-center justify-start text-white px-4 py-16 fade-on-scroll">
       <div class="w-full max-w-3xl mx-auto">
         <h2 class="text-2xl font-bold mb-6 text-blue-400">Competitions</h2>
         <div class="mb-4">
@@ -178,7 +178,7 @@
       </div>
     </section>
 
-    <section class="w-full flex flex-col items-center justify-start text-white px-4 py-16">
+    <section class="w-full flex flex-col items-center justify-start text-white px-4 py-16 fade-on-scroll">
       <div class="w-full max-w-3xl mx-auto">
         <h2 class="text-2xl font-bold mb-6 text-blue-400">Projects</h2>
         <div class="mb-4">
@@ -212,6 +212,15 @@
   section {
     box-sizing: border-box;
     z-index: 1;
+  }
+  .fade-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.6s cubic-bezier(.4,2,.6,1), transform 1.6s cubic-bezier(.4,2,.6,1);
+  }
+  .fade-in-visible {
+    opacity: 1 !important;
+    transform: none !important;
   }
   /* Remove card bubble/hover effect, let sections breathe */
   h1.text-4xl, h1.text-5xl {
@@ -293,4 +302,26 @@
     }
   }
 </style>
+<script>
+// Fade in on scroll for elements with .fade-on-scroll
+(function() {
+  function onReady(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  }
+  onReady(function() {
+    var observer = new window.IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.fade-on-scroll').forEach(function(el) {
+      observer.observe(el);
+    });
+  });
+})();
+</script>
 </html>
