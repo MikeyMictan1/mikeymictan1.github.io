@@ -82,6 +82,8 @@
       </div>
       <h2 class="absolute left-1/2 -translate-x-1/2 text-2xl md:text-3xl font-extrabold text-white pixel-font mb-0 z-10" style="bottom:13vh;">My Work</h2>
     </section>
+
+
     <!-- Projects Section - VisionON style split -->
 
     <section id="projects" class="w-full min-h-[420px] flex flex-col md:flex-row items-stretch justify-center bg-gradient-to-r from-[#2a2a2a] via-[#3a2a3a] to-[#2a2a3a] relative overflow-hidden">
@@ -224,6 +226,22 @@
         </div>
       </div>
     </section>
+
+
+        <!-- Contact Me Section -->
+    <section class="w-full flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-r from-[#232a3a] via-[#232a2a] to-[#232a3a]">
+      <div class="max-w-2xl w-full text-center fade-on-scroll">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-blue-400 pixel-font">Get in Touch</h2>
+        <div class="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-8 gap-4 items-center justify-center text-lg md:text-xl text-white">
+          <a href="https://www.linkedin.com/in/michael-tan-sikorski/" target="_blank" class="underline">LinkedIn: michael-tan-sikorski</a>
+          <a href="mailto:michaeltansikorski@outlook.com" class="underline">Email: michaeltansikorski@outlook.com</a>
+          <a href="https://mikeymictan1.github.io/" class="underline">Portfolio: mikeymictan1.github.io</a>
+          <a href="https://github.com/MikeyMictan1" target="_blank" class="underline">GitHub: MikeyMictan1</a>
+          <span>Phone: +44 7468411989</span>
+        </div>
+      </div>
+    </section>
+
 </body>
 <style>
   body, html, .font-montserrat, .font-custom, .font-custom2, .pixel-font {
@@ -267,9 +285,11 @@
       padding-left: 1rem !important;
       padding-right: 1rem !important;
     }
-    section img {
-      max-height: 220px !important;
-    }
+  section img {
+    max-height: 220px !important;
+  }
+  /* Contact links horizontal on desktop, stacked on mobile (default) */
+  /* No extra CSS needed, handled by flex-col (mobile) and sm:flex-row (desktop) classes */
   }
   .fade-in {
     opacity: 0;
