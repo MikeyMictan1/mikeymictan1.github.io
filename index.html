@@ -87,6 +87,36 @@
 
     <!-- Projects Section - VisionON style split -->
 
+      <section class="w-full min-h-[420px] flex flex-col md:flex-row items-stretch justify-center relative overflow-hidden">
+      <!-- AimSym with custom lime/brown gradient background -->
+      <!-- Left: Content -->
+      <div class="md:w-1/2 w-full flex flex-col justify-center px-6 py-10 md:py-0 md:px-16 order-2 md:order-1 relative z-10"
+        style="background: 
+          linear-gradient(120deg, #2a2d2a 0%, #3a453a 20%, #4a554a 40%, #5a655a 60%, #6a756a 80%, #4a554a 100%),
+          radial-gradient(ellipse at 80% 20%, #5a655a 0%, #3a453a 40%, transparent 100%),
+          radial-gradient(ellipse at 20% 80%, #6a756a 0%, #4a554a 60%, transparent 100%),
+          linear-gradient(150deg, #4a554a 0%, #3a453a 100%),
+          linear-gradient(90deg, #6a756a 0%, #5a655a 100%);
+          background-blend-mode: overlay, lighten, multiply, color-burn, normal;"> 
+        <div class="text-white fade-on-scroll" style="font-family: 'Press Start 2P', monospace;">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-8 tracking-widest text-left" style="letter-spacing:0.08em;">AIMSYM</h2>
+        <p class="text-base md:text-lg mb-8 font-normal">Aim Trainer desgined for a range of shooters such as Fortnite and CS GO!</p>
+        <p class="text-base md:text-lg mb-8 font-normal">Available Soon on Steam</p>
+        <a href="aimsym.html" class="underline mb-8 inline-block text-base md:text-lg">Learn About My Contribution</a>
+        <div class="flex items-center gap-4 text-base md:text-lg">
+          <span>Tools Used:</span>
+          <span title="Unreal Engine"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original-wordmark.svg" alt="Unreal Engine" style="height:1.9em;display:inline;vertical-align:middle;filter:brightness(0) invert(1);"></span>
+          <span title="C++"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" style="height:1.5em;display:inline;vertical-align:middle;"></span>
+        </div>
+        </div>
+      </div>
+      <!-- Right: Image -->
+      <div class="md:w-1/2 w-full flex items-center justify-center bg-black/60 order-1 md:order-2 relative z-10">
+        <img src="static/images/aimsym.png" alt="Safety Pool Studio" class="object-cover w-full h-full max-h-[420px] md:max-h-none" style="min-height:260px;cursor:pointer;" onclick="window.location.href='safetypool.html'">
+      </div>
+    </section>
+
+
     <section id="projects" class="w-full min-h-[420px] flex flex-col md:flex-row items-stretch justify-center bg-gradient-to-r from-[#2a2a2a] via-[#3a2a3a] to-[#2a2a3a] relative overflow-hidden">
       <!-- Left: Image -->
       <div class="md:w-1/2 w-full flex items-center justify-center bg-black/60" style="background: linear-gradient(135deg, #23272f 0%, #3a4a6a 60%, #4e6fae 100%);">
@@ -230,14 +260,14 @@
     <section id="aboutme" class="w-full flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-r from-[#232a3a] via-[#232a2a] to-[#232a3a]">
       <div class="max-w-3xl w-full text-center fade-on-scroll">
         <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-blue-400 pixel-font">About Me</h2>
-        <p class="text-lg md:text-xl text-white mb-6">Hi! I'm Michael, a game developer and gameplay programmer currently with a focus
-           in EduTech! I've started my own indie game company, Prelude Game Studio,
+        <p class="text-lg md:text-xl text-white mb-6">Hi! I'm Michael, a game developer and gameplay programmer! I've started my own indie game company, Prelude Game Studio,
           where I've managed all the steps of the development pipeline! From idea to execution, art to marketing, as long it's game
         dev, I'm all in 😄</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-8">
           <div>
             <h3 class="text-xl font-bold text-white mb-2">Languages</h3>
             <ul class="list-disc list-inside text-gray-200">
+              <li>C++</li>
               <li>C#</li>
               <li>GDScript</li>
               <li>Python</li>
@@ -248,9 +278,8 @@
           <div>
             <h3 class="text-xl font-bold text-white mb-2">Engines & Dev Tools</h3>
             <ul class="list-disc list-inside text-gray-200">
-              <li>Godot</li>
-              <li>Unity</li>
               <li>Unreal Engine</li>
+              <li>Godot</li>
               <li>Blender</li>
               <li>Git & GitHub</li>
             </ul>
