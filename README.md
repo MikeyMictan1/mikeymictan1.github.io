@@ -1,2 +1,2 @@
-## Michael Tan-Sikorski - Gamplay Programming Portfolio
+## Michael Tan-Sikorski - Gamplay Programmer Portfolio
 Link to website: https://mikeymictan1.github.io/
